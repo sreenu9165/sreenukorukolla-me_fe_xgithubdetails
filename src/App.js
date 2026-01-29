@@ -30,6 +30,12 @@ function App() {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="container">
       <div className="card">
@@ -45,6 +51,7 @@ function App() {
             placeholder="e.g. torvalds, gaearon, octocat"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
           <button onClick={handleSearch}>Search</button>
         </div>
